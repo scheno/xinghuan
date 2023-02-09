@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="xinghuan-spring-boot-starter-banner" />
+        <module name="xinghuan-module-system-biz" />
+        <module name="xinghuan-module-infra-api" />
+        <module name="xinghuan-server" />
+        <module name="xinghuan-module-infra-biz" />
+        <module name="xinghuan-module-system-api" />
+        <module name="xinghuan-spring-boot-starter-operatelog" />
+        <module name="xinghuan-common" />
+        <module name="xinghuan-spring-boot-starter-web" />
+        <module name="xinghuan-spring-boot-starter-mybatis" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

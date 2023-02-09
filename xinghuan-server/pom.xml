@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>xinghuan</artifactId>
+    <groupId>com.schening.boot</groupId>
+    <version>${revision}</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>xinghuan-server</artifactId>
+
+  <name>${project.artifactId}</name>
+  <description>
+    后端 Server 的主项目，通过引入需要 xinghuan-module-xxx 的依赖，
+    从而实现提供 RESTful API 给 xinghuan-ui-admin、xinghuan-ui-user 等前端项目。
+    本质上来说，它就是个空壳（容器）！
+  </description>
+  <url></url>
+
+  <dependencies>
+    <!-- spring boot 配置所需依赖 -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-configuration-processor</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>com.schening.boot</groupId>
+      <artifactId>xinghuan-spring-boot-starter-banner</artifactId>
+    </dependency>
+  </dependencies>
+
+</project>
