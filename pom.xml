@@ -13,6 +13,7 @@
     <module>xinghuan-server</module>
     <module>xinghuan-module-infra</module>
     <module>xinghuan-module-system</module>
+    <module>xinghuan-samples</module>
   </modules>
 
   <packaging>pom</packaging>
