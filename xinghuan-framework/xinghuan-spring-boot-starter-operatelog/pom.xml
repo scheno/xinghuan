@@ -33,6 +33,19 @@
       <groupId>com.schening.boot</groupId>
       <artifactId>xinghuan-spring-boot-starter-web</artifactId>
     </dependency>
+
+    <!-- 业务组件 -->
+    <dependency>
+      <groupId>com.schening.boot</groupId>
+      <artifactId>xinghuan-module-system-api</artifactId> <!-- 需要使用它，进行操作日志的记录 -->
+      <version>${revision}</version>
+    </dependency>
+
+    <!-- 工具类相关 -->
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+    </dependency>
   </dependencies>
 
 

@@ -27,6 +27,8 @@
     <!-- 工具类相关 -->
     <hutool.version>5.8.11</hutool.version>
     <lombok.version>1.18.24</lombok.version>
+    <mapstruct.version>1.5.3.Final</mapstruct.version>
+    <guava.version>31.1-jre</guava.version>
   </properties>
 
   <dependencyManagement>
@@ -105,9 +107,21 @@
       </dependency>
 
       <dependency>
+        <groupId>org.mapstruct</groupId>
+        <artifactId>mapstruct</artifactId> <!-- use mapstruct-jdk8 for Java 8 or higher -->
+        <version>${mapstruct.version}</version>
+      </dependency>
+
+      <dependency>
         <groupId>cn.hutool</groupId>
         <artifactId>hutool-all</artifactId>
         <version>${hutool.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>${guava.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
