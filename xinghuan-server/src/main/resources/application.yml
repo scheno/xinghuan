@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306?xinghuan
+      username: root
+      password: 123456

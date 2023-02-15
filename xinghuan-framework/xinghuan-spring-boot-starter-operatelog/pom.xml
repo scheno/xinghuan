@@ -32,6 +32,7 @@
     <dependency>
       <groupId>com.schening.boot</groupId>
       <artifactId>xinghuan-spring-boot-starter-web</artifactId>
+<!--      <scope>provided</scope>-->
     </dependency>
 
     <!-- 业务组件 -->

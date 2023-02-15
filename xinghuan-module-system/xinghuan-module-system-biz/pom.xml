@@ -25,6 +25,12 @@
       <version>${revision}</version>
     </dependency>
 
+    <!-- 业务组件 -->
+    <dependency>
+      <groupId>com.schening.boot</groupId>
+      <artifactId>xinghuan-spring-boot-starter-operatelog</artifactId>
+    </dependency>
+
     <!-- Web 相关 -->
     <dependency>
       <groupId>org.springdoc</groupId>

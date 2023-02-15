@@ -48,6 +48,11 @@
         <artifactId>xinghuan-spring-boot-starter-banner</artifactId>
         <version>${revision}</version>
       </dependency>
+      <dependency>
+        <groupId>com.schening.boot</groupId>
+        <artifactId>xinghuan-spring-boot-starter-operatelog</artifactId>
+        <version>${revision}</version>
+      </dependency>
 
       <!-- Web 相关 -->
       <dependency>
@@ -108,7 +113,17 @@
 
       <dependency>
         <groupId>org.mapstruct</groupId>
-        <artifactId>mapstruct</artifactId> <!-- use mapstruct-jdk8 for Java 8 or higher -->
+        <artifactId>mapstruct</artifactId>
+        <version>${mapstruct.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.mapstruct</groupId>
+        <artifactId>mapstruct-jdk8</artifactId> <!-- use mapstruct-jdk8 for Java 8 or higher -->
+        <version>${mapstruct.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.mapstruct</groupId>
+        <artifactId>mapstruct-processor</artifactId>
         <version>${mapstruct.version}</version>
       </dependency>
 
