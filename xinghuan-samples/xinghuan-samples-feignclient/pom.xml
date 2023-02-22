@@ -3,19 +3,12 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
-    <artifactId>xinghuan</artifactId>
+    <artifactId>xinghuan-samples</artifactId>
     <groupId>com.schening.boot</groupId>
     <version>${revision}</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>xinghuan-samples</artifactId>
-  <packaging>pom</packaging>
-
-  <modules>
-    <module>xinghuan-samples-elasticjob</module>
-    <module>xinghuan-samples-nacos</module>
-    <module>xinghuan-samples-feignclient</module>
-  </modules>
+  <artifactId>xinghuan-samples-feignclient</artifactId>
 
 </project>

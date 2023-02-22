@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.stereotype.Component;
 import org.springframework.util.ClassUtils;
 
 /**
@@ -13,6 +14,7 @@ import org.springframework.util.ClassUtils;
  * @date 2023/2/8 16:49
  */
 @Slf4j
+@Component
 public class BannerApplicationRunner implements ApplicationRunner {
 
     @Override

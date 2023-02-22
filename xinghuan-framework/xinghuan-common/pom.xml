@@ -20,7 +20,7 @@
     <!-- Spring 核心 -->
     <dependency>
       <groupId>org.springframework</groupId>
-      <artifactId>spring-core</artifactId>
+      <artifactId>spring-context</artifactId>
       <scope>provided</scope> <!-- 设置为 provided，只有工具类需要使用到 -->
     </dependency>
 

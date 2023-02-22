@@ -1,0 +1,13 @@
+# GROUP 不配置默认使用 DEFAULT_GROUP。
+spring:
+  application:
+    name: nacos-config
+  cloud:
+    nacos:
+      config:
+        serverAddr: 127.0.0.1:8848
+      discovery:
+        server-addr: 127.0.0.1:8848
+  config:
+    import:
+      - nacos:nacos-config.properties
