@@ -14,6 +14,7 @@
     <module>xinghuan-module-infra</module>
     <module>xinghuan-module-system</module>
     <module>xinghuan-samples</module>
+    <module>xinghuan-shop</module>
   </modules>
 
   <packaging>pom</packaging>

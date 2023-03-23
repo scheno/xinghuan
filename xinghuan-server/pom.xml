@@ -26,9 +26,18 @@
 <!--      <artifactId>spring-boot-configuration-processor</artifactId>-->
 <!--      <optional>true</optional>-->
 <!--    </dependency>-->
+<!--    <dependency>-->
+<!--      <groupId>com.schening.boot</groupId>-->
+<!--      <artifactId>xinghuan-module-system-biz</artifactId>-->
+<!--      <version>${revision}</version>-->
+<!--    </dependency>-->
     <dependency>
       <groupId>com.schening.boot</groupId>
-      <artifactId>xinghuan-module-system-biz</artifactId>
+      <artifactId>xinghuan-spring-boot-starter-banner</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.schening.boot</groupId>
+      <artifactId>xinghuan-spring-boot-starter-i18n</artifactId>
       <version>${revision}</version>
     </dependency>
   </dependencies>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>xinghuan</artifactId>
+    <groupId>com.schening.boot</groupId>
+    <version>${revision}</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>xinghuan-shop</artifactId>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>xinghuan-shop-common</module>
+    <module>xinghuan-shop-order</module>
+    <module>xinghuan-shop-goods</module>
+    <module>xinghuan-shop-coupon</module>
+    <module>xinghuan-shop-pay</module>
+  </modules>
+
+</project>

@@ -24,6 +24,8 @@
     <!-- DB 相关 -->
     <druid.version>1.2.15</druid.version>
     <mybatis-plus.version>3.5.3.1</mybatis-plus.version>
+    <!-- MQ 相关 -->
+    <rocketmq.version>2.1.1</rocketmq.version>
     <!-- 监控相关 -->
     <skywalking.version>8.12.0</skywalking.version>
     <!-- 工具类相关 -->
@@ -99,6 +101,18 @@
         <groupId>com.baomidou</groupId>
         <artifactId>mybatis-plus-boot-starter</artifactId>
         <version>${mybatis-plus.version}</version>
+      </dependency>
+
+      <!-- MQ 相关-->
+      <dependency>
+        <groupId>com.schening.boot</groupId>
+        <artifactId>xinghuan-spring-boot-starter-rocketmq</artifactId>
+        <version>${revision}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.rocketmq</groupId>
+        <artifactId>rocketmq-spring-boot-starter</artifactId>
+        <version>${rocketmq.version}</version>
       </dependency>
 
       <!-- 监控相关 -->

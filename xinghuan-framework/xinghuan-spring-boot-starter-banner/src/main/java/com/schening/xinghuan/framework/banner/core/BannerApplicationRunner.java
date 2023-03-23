@@ -14,7 +14,6 @@ import org.springframework.util.ClassUtils;
  * @date 2023/2/8 16:49
  */
 @Slf4j
-@Component
 public class BannerApplicationRunner implements ApplicationRunner {
 
     @Override

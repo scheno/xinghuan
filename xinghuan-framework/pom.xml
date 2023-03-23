@@ -19,6 +19,7 @@
     <module>xinghuan-spring-boot-starter-web</module>
     <module>xinghuan-spring-boot-starter-operatelog</module>
     <module>xinghuan-spring-boot-starter-i18n</module>
+    <module>xinghuan-spring-boot-starter-rocketmq</module>
   </modules>
 
   <description>
