@@ -3,18 +3,18 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
-    <artifactId>xinghuan-shop-pay</artifactId>
+    <artifactId>xinghuan-shop-user</artifactId>
     <groupId>com.schening.boot</groupId>
     <version>${revision}</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>xinghuan-shop-pay-service</artifactId>
+  <artifactId>xinghuan-shop-user-service</artifactId>
 
   <dependencies>
     <dependency>
       <groupId>com.schening.boot</groupId>
-      <artifactId>xinghuan-shop-pay-api</artifactId>
+      <artifactId>xinghuan-shop-user-api</artifactId>
       <version>${revision}</version>
     </dependency>
 

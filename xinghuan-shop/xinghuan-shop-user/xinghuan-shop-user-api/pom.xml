@@ -3,37 +3,34 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
-    <artifactId>xinghuan-shop-pay</artifactId>
+    <artifactId>xinghuan-shop-user</artifactId>
     <groupId>com.schening.boot</groupId>
     <version>${revision}</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>xinghuan-shop-pay-service</artifactId>
+  <artifactId>xinghuan-shop-user-api</artifactId>
+
+  <properties>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
+  </properties>
 
   <dependencies>
     <dependency>
       <groupId>com.schening.boot</groupId>
-      <artifactId>xinghuan-shop-pay-api</artifactId>
+      <artifactId>xinghuan-shop-common</artifactId>
       <version>${revision}</version>
     </dependency>
 
     <dependency>
-      <groupId>com.schening.boot</groupId>
-      <artifactId>xinghuan-spring-boot-starter-mybatis</artifactId>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-openfeign</artifactId>
     </dependency>
 
     <dependency>
-      <groupId>org.mapstruct</groupId>
-      <artifactId>mapstruct</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.mapstruct</groupId>
-      <artifactId>mapstruct-jdk8</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.mapstruct</groupId>
-      <artifactId>mapstruct-processor</artifactId>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
     </dependency>
   </dependencies>
 

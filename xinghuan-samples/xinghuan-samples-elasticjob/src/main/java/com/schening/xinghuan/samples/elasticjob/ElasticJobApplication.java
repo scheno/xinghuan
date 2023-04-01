@@ -23,9 +23,9 @@ public class ElasticJobApplication {
             System.out.println(instance.getClass());
         });
         //  定时调度作业
-//        new ScheduleJobBootstrap(createRegistryCenter(), new MyJob(), createScheduleJobConfiguration()).schedule();
+        new ScheduleJobBootstrap(createRegistryCenter(), new MyJob(), createScheduleJobConfiguration()).schedule();
         // 一次性调度作业
-        new OneOffJobBootstrap(createRegistryCenter(), new MyJob(), createOneOffJobConfiguration()).execute();
+//        new OneOffJobBootstrap(createRegistryCenter(), new MyJob(), createOneOffJobConfiguration()).execute();
     }
 
     private static CoordinatorRegistryCenter createRegistryCenter() {
@@ -49,7 +49,8 @@ public class ElasticJobApplication {
 
     private static JobConfiguration createOneOffJobConfiguration() {
         // 创建一次性作业配置， 并且使用记录日志策略
-        return JobConfiguration.newBuilder("myOneOffJob", 3).jobErrorHandlerType("ENHANCELOG").build();
+        return JobConfiguration.newBuilder("myOneOffJob", 3).jobErrorHandlerType("123").build();
+//        return JobConfiguration.newBuilder("myOneOffJob", 3).jobErrorHandlerType("ENHANCELOG").build();
 //        return JobConfiguration.newBuilder("myOneOffJob", 3).build();
     }
 }
