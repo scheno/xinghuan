@@ -1,8 +1,11 @@
 package com.schening.xinghuan.framework.rocketmq.config;
 
+import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfigureOrder;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -17,5 +20,11 @@ public class XinghuanRocketMQAutoConfiguration {
 
     @Autowired
     private MQProperties properties;
+
+    @Bean
+    @ConditionalOnMissingBean(RocketMQTemplate.class)
+    RocketMQTemplate rocketMQTemplate() {
+        return new RocketMQTemplate();
+    }
 
 }

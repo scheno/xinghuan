@@ -1,4 +1,4 @@
-package com.schening.xinghuan.shop.pay;
+package com.schening.xinghuan.shop.pay.repository;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.schening.xinghuan.shop.pay.po.TradePayPO;

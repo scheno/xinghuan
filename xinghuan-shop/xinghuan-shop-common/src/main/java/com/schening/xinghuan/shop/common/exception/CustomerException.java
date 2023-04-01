@@ -9,7 +9,7 @@ import com.schening.xinghuan.shop.common.constant.ShopCode;
  */
 public class CustomerException extends RuntimeException{
 
-    private ShopCode shopCode;
+    private final ShopCode shopCode;
 
     public CustomerException(ShopCode shopCode) {
         this.shopCode = shopCode;

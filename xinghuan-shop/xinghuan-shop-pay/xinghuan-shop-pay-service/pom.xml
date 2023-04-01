@@ -24,6 +24,11 @@
     </dependency>
 
     <dependency>
+      <groupId>com.schening.boot</groupId>
+      <artifactId>xinghuan-spring-boot-starter-rocketmq</artifactId>
+    </dependency>
+
+    <dependency>
       <groupId>org.mapstruct</groupId>
       <artifactId>mapstruct</artifactId>
     </dependency>

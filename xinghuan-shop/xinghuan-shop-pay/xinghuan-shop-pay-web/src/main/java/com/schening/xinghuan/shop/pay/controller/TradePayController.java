@@ -20,11 +20,24 @@ public class TradePayController {
 
     private final TradePayService payService;
 
+    /**
+     * 发起支付
+     * 
+     * @param pay
+     * @return
+     */
     @GetMapping("/createPayment")
     public Result createPayment(@RequestBody TradePay pay){
         return payService.createPayment(pay);
     }
 
+    /**
+     * 支付回调
+     * 
+     * @param pay
+     * @return
+     * @throws Exception
+     */
     @PostMapping("/callBackPayment")
     public Result callBackPayment(@RequestBody TradePay pay) throws Exception {
         return payService.callbackPayment(pay);
