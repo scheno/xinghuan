@@ -49,6 +49,8 @@ nbdist/
 ### JRebel ###
 rebel.xml
 
+.DS_Store
+
 application-my.yaml
 
 /yudao-ui-app/unpackage/

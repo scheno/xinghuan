@@ -22,6 +22,10 @@
       <groupId>com.schening.boot</groupId>
       <artifactId>xinghuan-spring-boot-starter-mybatis</artifactId>
     </dependency>
+    <dependency>
+      <groupId>com.schening.boot</groupId>
+      <artifactId>xinghuan-spring-boot-starter-rocketmq</artifactId>
+    </dependency>
 
     <dependency>
       <groupId>org.mapstruct</groupId>

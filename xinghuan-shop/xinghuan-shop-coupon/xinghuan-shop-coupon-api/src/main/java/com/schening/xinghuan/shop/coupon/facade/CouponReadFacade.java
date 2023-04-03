@@ -2,6 +2,7 @@ package com.schening.xinghuan.shop.coupon.facade;
 
 import com.schening.xinghuan.shop.coupon.model.TradeCoupon;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
 
 /**
  * @author shenchen
@@ -17,6 +18,7 @@ public interface CouponReadFacade {
      * @param couponId 优惠券ID
      * @return 优惠券详情
      */
+    @GetMapping("/coupon/findByCouponId")
     TradeCoupon findCouponByCouponId(Long couponId);
 
 }

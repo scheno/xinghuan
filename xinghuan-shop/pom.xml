@@ -18,6 +18,7 @@
     <module>xinghuan-shop-goods</module>
     <module>xinghuan-shop-coupon</module>
     <module>xinghuan-shop-pay</module>
+    <module>xinghuan-shop-user</module>
   </modules>
 
 </project>
