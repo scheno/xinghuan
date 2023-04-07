@@ -2,13 +2,15 @@ package com.schening.xinghuan.shop.goods.facade;
 
 import com.schening.xinghuan.shop.goods.model.TradeGoods;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * @author shenchen
  * @version 1.0
  * @date 2023/3/22 14:50
  */
-@FeignClient
+@FeignClient(name = "shop-goods", contextId = "shop-goods-read")
 public interface GoodsReadFacade {
 
     /**
@@ -16,6 +18,7 @@ public interface GoodsReadFacade {
      * @param goodsId 商品ID
      * @return 商品详情
      */
-    TradeGoods findGoodsByGoodsId(Long goodsId);
+    @GetMapping("/goods/findByGoodId")
+    TradeGoods findGoodsByGoodsId(@RequestParam(value = "goodsId") Long goodsId);
 
 }

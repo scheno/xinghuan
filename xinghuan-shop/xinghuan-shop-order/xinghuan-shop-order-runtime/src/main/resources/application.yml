@@ -1,6 +1,6 @@
 spring:
   application:
-    name: shop-user
+    name: shop-order
   cloud:
     nacos:
       discovery:
@@ -12,12 +12,15 @@ spring:
       password: 123456
 
 server:
-  port: 8083
+  port: 8084
+
 rocketmq:
-  name-server: localhost:9876
+  name-server: 192.168.2.36:9876
+  producer:
+    group: orderProducerGroup
 
 mq:
   order:
-    consumer:
-      group:
-        name: shop
+    topic: shop
+    tag:
+      cancel: cancel

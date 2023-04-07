@@ -1,7 +1,6 @@
 package com.schening.xinghuan.shop.goods.listener;
 
 import com.alibaba.fastjson.JSON;
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.conditions.query.LambdaQueryChainWrapper;
 import com.schening.xinghuan.shop.common.constant.ShopCode;

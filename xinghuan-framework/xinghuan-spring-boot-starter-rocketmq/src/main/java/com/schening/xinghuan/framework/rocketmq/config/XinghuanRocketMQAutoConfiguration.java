@@ -1,5 +1,6 @@
 package com.schening.xinghuan.framework.rocketmq.config;
 
+import org.apache.rocketmq.client.producer.DefaultMQProducer;
 import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfigureOrder;
@@ -21,9 +22,16 @@ public class XinghuanRocketMQAutoConfiguration {
     @Autowired
     private MQProperties properties;
 
-    @Bean
-    @ConditionalOnMissingBean(RocketMQTemplate.class)
+//    @Bean
+    DefaultMQProducer producer() {
+        return new DefaultMQProducer();
+    }
+
+//    @Bean
+//    @ConditionalOnMissingBean(RocketMQTemplate.class)
     RocketMQTemplate rocketMQTemplate() {
+        RocketMQTemplate rocketMQTemplate = new RocketMQTemplate();
+        rocketMQTemplate.setProducer(producer());
         return new RocketMQTemplate();
     }
 

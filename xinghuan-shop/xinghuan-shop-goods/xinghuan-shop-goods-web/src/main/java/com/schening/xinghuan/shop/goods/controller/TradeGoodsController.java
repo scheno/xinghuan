@@ -7,6 +7,7 @@ import com.schening.xinghuan.shop.goods.service.TradeGoodsService;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,8 +26,8 @@ public class TradeGoodsController {
     private final TradeGoodsService tradeGoodsService;
 
     @Operation(description = "查询商品详情")
-    @PostMapping("/goods/findByGoodId")
-    public TradeGoods findGoodsByGoodsId(@RequestParam Long goodsId) {
+    @GetMapping("/goods/findByGoodId")
+    public TradeGoods findGoodsByGoodsId(@RequestParam(value = "goodsId") Long goodsId) {
         return tradeGoodsService.findGoodsByGoodsId(goodsId);
     }
 

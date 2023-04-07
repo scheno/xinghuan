@@ -7,7 +7,7 @@ import org.springframework.cloud.openfeign.FeignClient;
  * @version 1.0
  * @date 2023/3/22 14:50
  */
-@FeignClient
+@FeignClient(name = "shop-order", contextId = "shop-order-read")
 public interface OrderReadFacade {
 
 }

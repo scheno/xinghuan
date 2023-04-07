@@ -3,6 +3,7 @@ package com.schening.xinghuan.shop.user.facade;
 import com.schening.xinghuan.shop.user.model.TradeUser;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * @author shenchen
@@ -19,6 +20,6 @@ public interface UserReadFacade {
      * @return 用户详情
      */
     @GetMapping("/user/findByUserId")
-    TradeUser findUserByUserId(Long userId);
+    TradeUser findUserByUserId(@RequestParam(value = "userId") Long userId);
 
 }

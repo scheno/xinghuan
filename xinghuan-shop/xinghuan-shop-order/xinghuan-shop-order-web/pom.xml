@@ -11,9 +11,12 @@
 
   <artifactId>xinghuan-shop-order-web</artifactId>
 
-  <properties>
-    <maven.compiler.source>8</maven.compiler.source>
-    <maven.compiler.target>8</maven.compiler.target>
-  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>com.schening.boot</groupId>
+      <artifactId>xinghuan-shop-order-service</artifactId>
+      <version>${revision}</version>
+    </dependency>
+  </dependencies>
 
 </project>

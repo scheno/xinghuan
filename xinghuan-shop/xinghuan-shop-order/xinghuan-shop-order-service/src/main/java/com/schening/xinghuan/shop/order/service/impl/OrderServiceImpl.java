@@ -3,10 +3,12 @@ package com.schening.xinghuan.shop.order.service.impl;
 import cn.hutool.json.JSONUtil;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 import com.schening.xinghuan.shop.common.constant.ShopCode;
 import com.schening.xinghuan.shop.common.entity.MQEntity;
 import com.schening.xinghuan.shop.common.entity.Result;
 import com.schening.xinghuan.shop.common.exception.CastException;
+import com.schening.xinghuan.shop.common.utils.IDWorker;
 import com.schening.xinghuan.shop.coupon.facade.CouponReadFacade;
 import com.schening.xinghuan.shop.coupon.facade.CouponWriteFacade;
 import com.schening.xinghuan.shop.coupon.model.TradeCoupon;
@@ -37,6 +39,7 @@ import org.apache.rocketmq.remoting.exception.RemotingException;
 import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author shenchen
@@ -54,9 +57,9 @@ public class OrderServiceImpl implements OrderService {
     @Value("${mq.order.tag.cancel}")
     private String tag;
 
-    private final TradeOrderRepository tradeOrderRepository;
+    private final IDWorker idWorker;
 
-    private final PayWriteFacade payWriteFacade;
+    private final TradeOrderRepository tradeOrderRepository;
 
     private final GoodsReadFacade goodsReadFacade;
 
@@ -79,15 +82,14 @@ public class OrderServiceImpl implements OrderService {
         // 2.生成预订单
         long orderId = savePreOrder(order);
         try {
+            // 模拟异常抛出
+            CastException.cast(ShopCode.SHOP_FAIL);
             // 3.扣减库存
             reduceGoodsNum(order);
             // 4.扣减优惠券
             updateCouponStatus(order);
             // 5.使用余额
             reduceMoneyPaid(order);
-
-            // 模拟异常抛出
-            // CastException.cast(ShopCode.SHOP_FAIL);
 
             // 6.确认订单
             updateOrderStatus(order);
@@ -167,7 +169,7 @@ public class OrderServiceImpl implements OrderService {
             coupon.setIsUsed(ShopCode.SHOP_COUPON_ISUSED.getCode());
             coupon.setUsedTime(new Date());
 
-            //更新优惠券状态
+            // 更新优惠券状态
             Result result = couponWriteFacade.updateCouponStatus(coupon);
             if (result.getSuccess().equals(ShopCode.SHOP_FAIL.getSuccess())) {
                 CastException.cast(ShopCode.SHOP_COUPON_USE_FAIL);
@@ -199,9 +201,74 @@ public class OrderServiceImpl implements OrderService {
      * @param order 订单实体
      * @return 订单编号
      */
-    private int savePreOrder(TradeOrder order) {
-        TradeOrderPO tradeOrder = new TradeOrderPO();
-        return tradeOrderRepository.insert(tradeOrder);
+    private long savePreOrder(TradeOrder order) {
+        // 1. 设置订单状态为不可见
+        order.setOrderStatus(ShopCode.SHOP_ORDER_NO_CONFIRM.getCode());
+        // 2. 设置订单ID
+        long orderId = idWorker.nextId();
+        order.setOrderId(orderId);
+        // 3. 核算订单运费
+//        BigDecimal shippingFee = calculateShippingFee(order.getOrderAmount());
+//        if(order.getShippingFee().compareTo(shippingFee)!=0){
+//            CastException.cast(ShopCode.SHOP_ORDER_SHIPPINGFEE_INVALID);
+//        }
+        // 4. 核算订单总金额是否合法
+//        BigDecimal orderAmount = order.getGoodsPrice().multiply(new BigDecimal(order.getGoodsNumber()));
+//        orderAmount.add(shippingFee);
+//        if(order.getOrderAmount().compareTo(orderAmount)!=0){
+//            CastException.cast(ShopCode.SHOP_ORDERAMOUNT_INVALID);
+//        }
+        // 5.判断用户是否使用余额
+//        BigDecimal moneyPaid = order.getMoneyPaid();
+//        if(moneyPaid!=null){
+            // 5.1 订单中余额是否合法
+//            int r = moneyPaid.compareTo(BigDecimal.ZERO);
+
+            // 余额小于0
+//            if(r==-1){
+//                CastException.cast(ShopCode.SHOP_MONEY_PAID_LESS_ZERO);
+//            }
+
+            // 余额大于0
+//            if(r==1){
+//                TradeUser user = userService.findOne(order.getUserId());
+
+//                if(moneyPaid.compareTo(new BigDecimal(user.getUserMoney()))==1){
+//                    CastException.cast(ShopCode.SHOP_MONEY_PAID_INVALID);
+//                }
+//            }
+
+//        }else{
+//            order.setMoneyPaid(BigDecimal.ZERO);
+//        }
+        //6.判断用户是否使用优惠券
+//        Long couponId = order.getCouponId();
+//        if(couponId!=null){
+//            TradeCoupon coupon = couponService.findOne(couponId);
+            //6.1 判断优惠券是否存在
+//            if(coupon==null){
+//                CastException.cast(ShopCode.SHOP_COUPON_NO_EXIST);
+//            }
+            //6.2 判断优惠券是否已经被使用
+//            if(coupon.getIsUsed().intValue()==ShopCode.SHOP_COUPON_ISUSED.getCode().intValue()){
+//                CastException.cast(ShopCode.SHOP_COUPON_ISUSED);
+//            }
+
+//            order.setCouponPaid(coupon.getCouponPrice());
+
+//        }else{
+//            order.setCouponPaid(BigDecimal.ZERO);
+//        }
+        //7.核算订单支付金额    订单总金额-余额-优惠券金额
+//        BigDecimal payAmount = order.getOrderAmount().subtract(order.getMoneyPaid()).subtract(order.getCouponPaid());
+//        order.setPayAmount(payAmount);
+        //8.设置下单时间
+        order.setAddTime(new Date());
+        //9.保存订单到数据库
+        TradeOrderPO tradeOrder = TradeOrderConverter.INSTANCE.convert(order);
+        tradeOrderRepository.insert(tradeOrder);
+        //10.返回订单ID
+        return orderId;
     }
 
     /**
@@ -210,7 +277,7 @@ public class OrderServiceImpl implements OrderService {
      * @param order 订单实体
      */
     private void checkOrder(TradeOrder order) {
-        //1.校验订单是否存在
+        // 1.校验订单是否存在
         if (order == null) {
             CastException.cast(ShopCode.SHOP_ORDER_INVALID);
         }
@@ -247,7 +314,7 @@ public class OrderServiceImpl implements OrderService {
     private void sendCancelOrder(String topic, String tag, String keys, String body)
             throws MQBrokerException, RemotingException, InterruptedException, MQClientException {
         Message message = new Message(topic, tag, keys, body.getBytes());
-        rocketMQTemplate.getProducer().send(message);
+        rocketMQTemplate.getProducer().send(message, 15000);
     }
 
 }

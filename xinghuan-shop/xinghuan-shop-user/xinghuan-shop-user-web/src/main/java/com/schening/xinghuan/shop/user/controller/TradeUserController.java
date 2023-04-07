@@ -33,7 +33,7 @@ public class TradeUserController {
      */
     @Operation(description = "查询用户详情")
     @GetMapping("/user/findByUserId")
-    TradeUser findUserByUserId(@RequestParam Long userId) {
+    TradeUser findUserByUserId(@RequestParam(value = "userId") Long userId) {
         return tradeUserService.findUserByUserId(userId);
     }
 
