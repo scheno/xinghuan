@@ -1,5 +1,6 @@
 package com.schening.xinghuan.shop.goods.po;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.util.Date;
 import lombok.Data;
@@ -12,6 +13,7 @@ import lombok.EqualsAndHashCode;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
+@TableName("trade_mq_consumer_log")
 public class TradeMQConsumerLogPO extends TradeMQConsumerLogKey implements Serializable {
     private String msgId;
 

@@ -4,13 +4,23 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: localhost:8848
+        server-addr: 192.168.2.37:8848
   datasource:
     druid:
-      url: jdbc:mysql://localhost:3306/trade
+      url: jdbc:mysql://192.168.2.37:3306/trade
       username: root
       password: 123456
 
 server:
   port: 8082
+
+rocketmq:
+  name-server: 192.168.2.37:9876
+
+mq:
+  order:
+    consumer:
+      group:
+        name: order_orderTopic_cancel_group
+    topic: orderTopic
 

@@ -16,6 +16,7 @@
     <module>xinghuan-samples-elasticjob</module>
     <module>xinghuan-samples-nacos</module>
     <module>xinghuan-samples-feignclient</module>
+    <module>xinghuan-samples-redisson</module>
   </modules>
 
 </project>
