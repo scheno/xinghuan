@@ -3,11 +3,9 @@ package com.schening.xinghuan.samples.redisson.service;
 import com.schening.xinghuan.samples.redisson.po.UserPO;
 import com.schening.xinghuan.samples.redisson.repository.UserRepository;
 import com.schening.xinghuan.samples.redisson.util.SpringUtils;
-import javax.jws.soap.SOAPBinding.Use;
 import lombok.RequiredArgsConstructor;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
-import org.springframework.aop.framework.AopContext;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
